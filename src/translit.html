@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .container {
+            max-width: 960px;
+        }
+
+        .lh-condensed { line-height: 1.25; }
+    </style>
+
+    <title>Ελληνικά</title>
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Un-transliteration</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <form>
+                <div class="form-group">
+                    <label for="sourceText">Source <span class="text-muted">(transliterated)</span></label>
+                    <textarea class="form-control" id="sourceText" rows="10"
+                              placeholder="Enter a transliterated text to decode"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resultText">Result</label>
+                    <textarea class="form-control" id="resultText" placeholder="" rows="10" readonly></textarea>
+                </div>
+
+                <hr class="mb-4">
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
