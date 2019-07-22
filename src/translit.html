@@ -18,9 +18,6 @@
 </head>
 <body class="bg-light">
 <div class="container">
-    <div class="py-5 text-center">
-        <h2>Un-transliteration</h2>
-    </div>
     <div class="row">
         <div class="col-md-8 order-md-1">
             <form>
@@ -35,6 +32,12 @@
                 </div>
 
                 <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="button" id="analyzeButton">Tokenize</button>
+
+                <hr class="mb-4">
+                <ul class="list-group" id="tokens"></ul>
+                <hr class="mb-4">
+                <p><a href="http://gurin.tomsknet.ru/alphaonline.html" target="_blank">Vocabulary</a></p>
             </form>
         </div>
     </div>

@@ -1,3 +1,4 @@
+import { isLetter } from "./utils";
 
 const MapSource = "ABGDEZHQIKLMNXOPRSTYФХJWabgdezhqiklmvxoprsctuфхjw0123456789";
 const MapDestination = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψω0123456789";
@@ -13,8 +14,7 @@ export function untransliterate(source: string|null|undefined): string {
             result += MapDestination[mapIndex];
             continue;
         }
-        const chLower = ch.toLowerCase();
-        if (/[a-z]/.test(chLower) || /[а-я]/.test(chLower)) {
+        if (isLetter(ch)) {
             result += "*";
             continue;
         }
