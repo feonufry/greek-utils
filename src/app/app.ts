@@ -7,5 +7,5 @@ function handleUntransliterate() {
 }
 
 $(() => {
-    $("#sourceText").on("keypress", handleUntransliterate);
+    $("#sourceText").on("keyup", handleUntransliterate);
 });
