@@ -1,5 +1,6 @@
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
+import sourcemaps from "rollup-plugin-sourcemaps";
 
 export default [
     // browser-friendly UMD build, minified
@@ -12,7 +13,8 @@ export default [
         },
         plugins: [
             resolve(),
-            commonjs()
+            commonjs(),
+            sourcemaps(),
         ]
     }
 ];
