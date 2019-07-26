@@ -1,5 +1,7 @@
-import { untransliterate } from "./untransliterate";
-import { tokenize } from "./tokenize";
+import { untransliterate } from "../core/transliteration";
+import { tokenize } from "../core/scanning";
+import { annotate } from "../core/grammar/engine";
+import { buildGrammarAnnotationsHtml, buildSearchLinksHtml } from "./annotations";
 
 function handleUntransliterate() {
     const source = $("#sourceText").val() as string;
@@ -9,16 +11,20 @@ function handleUntransliterate() {
 
 function handleAnalyze() {
     const source = $("#sourceText").val() as string;
-    let content = "";
+    const $tokensList = $("#tokens");
+    $tokensList.html("");
     for (const token of tokenize(source)) {
-        content += `<li class="list-group-item">
+        const annotatedToken = annotate(token);
+
+        const item = `<li class="list-group-item">
 <div class="d-flex w-100 justify-content-between">
-      <h6 class="mb-1">${token.greek} <small class="text-muted">/ ${token.translit}</small></h6>
-      <a class="btn btn-light btn-small app-search" href="search.html?q=${token.greek}" target="_blank">Search</a>
-    </div>
+    <h6 class="mb-1">${token.greek} <small class="text-muted">/ ${token.transliterated}</small></h6>
+    <small>${buildSearchLinksHtml(token.greek)}</small>
+</div>
+${buildGrammarAnnotationsHtml(annotatedToken)}
 </li>`;
+        $tokensList.append(item);
     }
-    $("#tokens").html(content);
 }
 
 $(() => {

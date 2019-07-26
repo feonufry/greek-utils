@@ -1,5 +1,5 @@
-import { isLetter } from "./utils";
-import { untransliterate } from "./untransliterate";
+import { isLetter } from "../utils";
+import { untransliterate } from "../transliteration";
 
 const Separators = ".,;:!?- ";
 
@@ -9,7 +9,7 @@ function isSeparator(ch: string): boolean {
 }
 
 export interface Token {
-    translit: string;
+    transliterated: string;
     greek: string;
 }
 
@@ -33,7 +33,7 @@ export function* tokenize(inputTranslit: string): IterableIterator<Token> {
 function createToken(translit: string): Token {
     const translitLower = translit.toLowerCase();
     return {
-        translit: translitLower,
+        transliterated: translitLower,
         greek: untransliterate(translitLower),
     };
 }

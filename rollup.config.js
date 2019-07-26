@@ -5,7 +5,7 @@ import sourcemaps from "rollup-plugin-sourcemaps";
 export default [
     // browser-friendly UMD build, minified
     {
-        input: "out/build/app.js",
+        input: "out/build/app/app.js",
         output: {
             file: "dist/app.js",
             format: "iife",
