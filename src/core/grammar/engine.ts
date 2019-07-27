@@ -1,35 +1,49 @@
+
+import "./vocabulary";
 import "./articles";
 import "./verbs";
 import "./noun-like";
 
 import { Token } from "../scanning";
-import { CanonicalTransformationAware, GrammarAnnotation, GrammarType } from "./index";
+import { CanonicalTransformationAware, GrammarAnnotation, GrammarType, VocabularyEntry } from "./index";
 import { search } from "./registry";
 
 export interface AnnotatedToken {
     token: Token;
     annotations: GrammarAnnotation[];
+    vocabulary: VocabularyEntry[];
 }
 
 export function annotate(token: Token): AnnotatedToken {
-    const annotationsFound = search(token.transliterated);
+    const searchResult = search(token.transliterated);
     const annotations: GrammarAnnotation[] = [];
 
-    for (const annotation of annotationsFound) {
+    let vocabularyResult = searchResult.vocabulary;
+    const canonicals: string[] = [];
+    for (const annotation of searchResult.annotations) {
+        let effectiveAnnotation = annotation;
         if (annotation.type === GrammarType.VERB
                 || annotation.type === GrammarType.NOUN) {
 
-            const transformedAnnotation: GrammarAnnotation = {
+            effectiveAnnotation = {
                 ...annotation,
                 canonical: transformToCanonical(token.transliterated, annotation),
             };
-            annotations.push(transformedAnnotation);
-        } else {
-            annotations.push(annotation);
+        }
+        annotations.push(effectiveAnnotation);
+        for (const canonical of effectiveAnnotation.canonical) {
+            canonicals.push(canonical);
+        }
+    }
+    console.log(canonicals);
+    for (const canonical of canonicals) {
+        const vocabularyForCanonical = search(canonical).vocabulary;
+        for (const vocabulary of vocabularyForCanonical) {
+            vocabularyResult.push(vocabulary);
         }
     }
 
-    return { token, annotations, };
+    return { token, annotations, vocabulary: vocabularyResult };
 }
 
 function transformToCanonical(tokenTransliterated: string, annotation: CanonicalTransformationAware): string[] {

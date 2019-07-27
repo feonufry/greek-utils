@@ -8,12 +8,28 @@ import {
     Person,
     Singularity,
     Tense,
-    VerbAnnotation,
+    VerbAnnotation, VocabularyEntry, VocabularyEntryDescription,
     Voice
 } from "../core/grammar";
 import { AnnotatedToken } from "../core/grammar/engine";
 import { untransliterate } from "../core/transliteration";
 import { Token } from "../core/scanning";
+
+export function buildTypeHtml(type: GrammarType) {
+    switch (type) {
+        case GrammarType.ARTICLE:
+            return "<span class='badge badge-light'>Арт</span>";
+        case GrammarType.VERB:
+            return "<span class='badge badge-danger'>Глаг</span>";
+        case GrammarType.NOUN:
+            return "<span class='badge badge-success'>Сущ</span>";
+        case GrammarType.ADVERB:
+            return "<span class='badge badge-secondary'>Нареч</span>";
+        case GrammarType.PREPOSITION:
+            return "<span class='badge badge-info'>Предл</span>";
+    }
+    return "";
+}
 
 export function buildGendersHtml(genders: Gender[]) {
     let result: string[] = [];
@@ -106,21 +122,21 @@ export function buildPersonHtml(person: Person) {
 }
 
 export function buildArticleAnnotationHtml(token: Token, annotation: ArticleAnnotation) {
-    return "<p><span class='badge badge-light'>Арт</span> "
+    return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}</small> `
         + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
         + "</p>";
 }
 
 export function buildVerbAnnotationHtml(token: Token, annotation: VerbAnnotation) {
-    return "<p><span class='badge badge-danger'>Глаг.</span> "
+    return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildMoodHtml(annotation.mood)}; ${buildVoiceHtml(annotation.voice)}; ${buildTenseHtml(annotation.tense)}; ${buildPersonHtml(annotation.person)}; ${buildSingularityHtml(annotation.singularity)}</small> `
         + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
         + "</p>";
 }
 
 export function buildNounAnnotationHtml(token: Token, annotation: NounAnnotation) {
-    return "<p><span class='badge badge-success'>Сущ</span> "
+    return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}</small> `
         + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
         + "</p>";
@@ -137,6 +153,28 @@ export function buildGrammarAnnotationsHtml(token: AnnotatedToken) {
         } else if (annotation.type === GrammarType.VERB) {
             content += buildVerbAnnotationHtml(token.token, annotation);
         }
+    }
+
+    return content;
+}
+
+export function buildVocabularyEntryDescriptionHtml(description: VocabularyEntryDescription) {
+    return description.secondary != null
+        ? `${description.primary} <small>(${description.secondary})</small>`
+        : description.primary;
+}
+
+export function buildVocabularyEntryHtml(vocabulary: VocabularyEntry) {
+    return `<p>${buildTypeHtml(vocabulary.grammarType)} <strong>${untransliterate(vocabulary.word)}</strong> `
+        + buildVocabularyEntryDescriptionHtml(vocabulary.description)
+        + " </p>";
+}
+
+export function buildVocabularyHtml(token: AnnotatedToken) {
+    let content = "";
+
+    for (const vocabulary of token.vocabulary) {
+        content += buildVocabularyEntryHtml(vocabulary);
     }
 
     return content;

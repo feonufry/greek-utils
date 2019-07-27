@@ -1,7 +1,7 @@
 import { untransliterate } from "../core/transliteration";
 import { tokenize } from "../core/scanning";
+import { buildGrammarAnnotationsHtml, buildSearchLinksHtml, buildVocabularyHtml } from "./annotations";
 import { annotate } from "../core/grammar/engine";
-import { buildGrammarAnnotationsHtml, buildSearchLinksHtml } from "./annotations";
 
 function handleUntransliterate() {
     const source = $("#sourceText").val() as string;
@@ -12,7 +12,7 @@ function handleUntransliterate() {
 function handleAnalyze() {
     const source = $("#sourceText").val() as string;
     const $tokensList = $("#tokens");
-    $tokensList.html("");
+    $tokensList.empty();
     for (const token of tokenize(source)) {
         const annotatedToken = annotate(token);
 
@@ -22,6 +22,7 @@ function handleAnalyze() {
     <small>${buildSearchLinksHtml(token.greek)}</small>
 </div>
 ${buildGrammarAnnotationsHtml(annotatedToken)}
+${buildVocabularyHtml(annotatedToken)}
 </li>`;
         $tokensList.append(item);
     }

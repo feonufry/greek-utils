@@ -40,6 +40,20 @@ export enum GrammarType {
     ARTICLE,
     NOUN,
     VERB,
+    ADVERB,
+    PREPOSITION,
+}
+
+export interface VocabularyEntryDescription {
+    primary: string;
+    secondary?: string;
+}
+
+export interface VocabularyEntry {
+    word: string;
+    grammarType: GrammarType;
+    skipAnnotations: boolean;
+    description: VocabularyEntryDescription;
 }
 
 export interface CanonicalTransformation {
@@ -56,7 +70,7 @@ export interface CanonicalTransformationAware {
 }
 
 export interface ArticleAnnotation {
-    type: GrammarType.ARTICLE,
+    type: GrammarType.ARTICLE;
     gender: Gender[];
     singularity: Singularity;
     case: Case[];
@@ -65,7 +79,7 @@ export interface ArticleAnnotation {
 }
 
 export interface NounAnnotation {
-    type: GrammarType.NOUN,
+    type: GrammarType.NOUN;
     gender: Gender[];
     singularity: Singularity;
     case: Case[];
@@ -74,7 +88,7 @@ export interface NounAnnotation {
 }
 
 export interface VerbAnnotation {
-    type: GrammarType.VERB,
+    type: GrammarType.VERB;
     mood: Mood;
     tense: Tense;
     voice: Voice;
@@ -87,3 +101,8 @@ export interface VerbAnnotation {
 export type GrammarAnnotation = ArticleAnnotation
     | VerbAnnotation
     | NounAnnotation;
+
+export interface SearchResult {
+    vocabulary: VocabularyEntry[];
+    annotations: GrammarAnnotation[];
+}
