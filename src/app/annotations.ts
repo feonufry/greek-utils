@@ -23,10 +23,16 @@ export function buildTypeHtml(type: GrammarType) {
             return "<span class='badge badge-danger'>Глаг</span>";
         case GrammarType.NOUN:
             return "<span class='badge badge-success'>Сущ</span>";
+        case GrammarType.ADJECTIVE:
+            return "<span class='badge badge-success'>Прил</span>";
+        case GrammarType.PRONOUN:
+            return "<span class='badge badge-warning'>Мест</span>";
         case GrammarType.ADVERB:
             return "<span class='badge badge-secondary'>Нареч</span>";
         case GrammarType.PREPOSITION:
             return "<span class='badge badge-info'>Предл</span>";
+        case GrammarType.CONJUNCTION:
+            return "<span class='badge badge-info'>Союз</span>";
     }
     return "";
 }

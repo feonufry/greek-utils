@@ -39,9 +39,12 @@ export enum Person {
 export enum GrammarType {
     ARTICLE,
     NOUN,
+    ADJECTIVE, // прилагательное
+    PRONOUN, // местоимение
     VERB,
-    ADVERB,
-    PREPOSITION,
+    ADVERB, // наречие
+    PREPOSITION, // предлог
+    CONJUNCTION, // союз
 }
 
 export interface VocabularyEntryDescription {
