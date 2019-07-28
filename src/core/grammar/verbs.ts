@@ -95,3 +95,91 @@ register("ousiv", {
         replacement: "w"
     }]
 });
+
+register("$eimi", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.FIRST,
+    singularity: Singularity.SINGULAR,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$esmev", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.FIRST,
+    singularity: Singularity.PLURAL,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$ei", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.SECOND,
+    singularity: Singularity.SINGULAR,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$este", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.SECOND,
+    singularity: Singularity.PLURAL,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$esti", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$estiv", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$eisi", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.THIRD,
+    singularity: Singularity.PLURAL,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
+
+register("$eisiv", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.ACTIVE,
+    person: Person.THIRD,
+    singularity: Singularity.PLURAL,
+    canonical: ["eimi"],
+    canonicalTransformations: []
+});
