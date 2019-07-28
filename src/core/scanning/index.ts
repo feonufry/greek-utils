@@ -16,7 +16,7 @@ export interface Token {
 export function* tokenize(inputTranslit: string): IterableIterator<Token> {
     let token = "";
     for (const ch of inputTranslit) {
-        if (isLetter(ch)) {
+        if (isLetter(ch) || ch === "/") {
             token += ch;
             continue;
         }
