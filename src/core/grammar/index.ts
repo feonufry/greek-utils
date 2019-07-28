@@ -45,6 +45,7 @@ export enum GrammarType {
     ADVERB, // наречие
     PREPOSITION, // предлог
     CONJUNCTION, // союз
+    PARTICLE, // частица
 }
 
 export interface VocabularyEntryDescription {

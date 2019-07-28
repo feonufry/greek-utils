@@ -33,6 +33,8 @@ export function buildTypeHtml(type: GrammarType) {
             return "<span class='badge badge-info'>Предл</span>";
         case GrammarType.CONJUNCTION:
             return "<span class='badge badge-info'>Союз</span>";
+        case GrammarType.PARTICLE:
+            return "<span class='badge badge-dark'>Част</span>";
     }
     return "";
 }
