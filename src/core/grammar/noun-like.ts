@@ -75,6 +75,24 @@ register("hv", {
     canonicalTransformations: transform("hv", "h", "hc")
 });
 
+register("ac", {
+    type: GrammarType.NOUN,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE],
+    canonical: [],
+    canonicalTransformations: []
+});
+
+register("hc", {
+    type: GrammarType.NOUN,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE],
+    canonical: [],
+    canonicalTransformations: []
+});
+
 register("ou", {
     type: GrammarType.NOUN,
     gender: [Gender.MASCULINE],

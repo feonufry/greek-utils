@@ -45,6 +45,52 @@ vocabulary("hsuхh/", GrammarType.ADVERB, {
     primary: "тихо, спокойно, неторопливо"
 }, true);
 
-vocabulary("ekklhsiarхhc", GrammarType.ADVERB, {
+vocabulary("ekklhsiarхhc", GrammarType.NOUN, {
     primary: "экклесиарх"
-}, true);
+}, false);
+
+vocabulary("ego", GrammarType.PARTICLE, {
+    primary: "я"
+}, false);
+
+vocabulary("hmeic", GrammarType.PARTICLE, {
+    primary: "мы"
+}, false);
+
+vocabulary("su", GrammarType.PARTICLE, {
+    primary: "ты"
+}, false);
+
+vocabulary("umeic", GrammarType.PARTICLE, {
+    primary: "вы"
+}, false);
+
+vocabulary("autoc", GrammarType.PARTICLE, {
+    primary: "он",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);
+
+vocabulary("auth", GrammarType.PARTICLE, {
+    primary: "она",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);
+
+vocabulary("auto", GrammarType.PARTICLE, {
+    primary: "оно",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);
+
+vocabulary("autoi", GrammarType.PARTICLE, {
+    primary: "они - муж.род",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);
+
+vocabulary("autai", GrammarType.PARTICLE, {
+    primary: "они - жен.род",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);
+
+vocabulary("auta", GrammarType.PARTICLE, {
+    primary: "они - сред.род",
+    secondary: "в функции личного употребляется в косвенных падежах"
+}, false);

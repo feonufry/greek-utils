@@ -3,6 +3,7 @@ import "./vocabulary";
 import "./articles";
 import "./verbs";
 import "./noun-like";
+import "./particles";
 
 import { Token } from "../scanning";
 import { CanonicalTransformationAware, GrammarAnnotation, GrammarType, VocabularyEntry } from "./index";
@@ -35,7 +36,6 @@ export function annotate(token: Token): AnnotatedToken {
             canonicals.push(canonical);
         }
     }
-    console.log(canonicals);
     for (const canonical of canonicals) {
         const vocabularyForCanonical = search(canonical).vocabulary;
         for (const vocabulary of vocabularyForCanonical) {

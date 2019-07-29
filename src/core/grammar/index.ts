@@ -82,6 +82,15 @@ export interface ArticleAnnotation {
     related: string[];
 }
 
+export interface ParticleAnnotation {
+    type: GrammarType.PARTICLE;
+    gender: Gender[];
+    singularity: Singularity;
+    case: Case[];
+    person?: Person;
+    canonical: string[];
+}
+
 export interface NounAnnotation {
     type: GrammarType.NOUN;
     gender: Gender[];
@@ -104,7 +113,8 @@ export interface VerbAnnotation {
 
 export type GrammarAnnotation = ArticleAnnotation
     | VerbAnnotation
-    | NounAnnotation;
+    | NounAnnotation
+    | ParticleAnnotation;
 
 export interface SearchResult {
     vocabulary: VocabularyEntry[];

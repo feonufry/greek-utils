@@ -4,7 +4,7 @@ import {
     Case,
     Gender,
     GrammarType,
-    Mood, NounAnnotation,
+    Mood, NounAnnotation, ParticleAnnotation,
     Person,
     Singularity,
     Tense,
@@ -49,9 +49,9 @@ export function buildGendersHtml(genders: Gender[]) {
 
 export function buildGenderHtml(gender: Gender) {
     switch (gender) {
-        case Gender.FEMININE:
-            return "<attr title='мужской род'>м.р.</attr>";
         case Gender.MASCULINE:
+            return "<attr title='мужской род'>м.р.</attr>";
+        case Gender.FEMININE:
             return "<attr title='женский род'>ж.р.</attr>";
         case Gender.NEUTER:
             return "<attr title='средний род'>ср.р.</attr>";
@@ -150,6 +150,15 @@ export function buildNounAnnotationHtml(token: Token, annotation: NounAnnotation
         + "</p>";
 }
 
+export function buildParticleAnnotationHtml(token: Token, annotation: ParticleAnnotation) {
+    return `<p>${buildTypeHtml(annotation.type)} `
+        + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}; `
+        + (annotation.person != null ? buildPersonHtml(annotation.person) : "")
+        + "</small>"
+        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + "</p>";
+}
+
 export function buildGrammarAnnotationsHtml(token: AnnotatedToken) {
     let content = "";
 
@@ -160,6 +169,8 @@ export function buildGrammarAnnotationsHtml(token: AnnotatedToken) {
             content += buildNounAnnotationHtml(token.token, annotation);
         } else if (annotation.type === GrammarType.VERB) {
             content += buildVerbAnnotationHtml(token.token, annotation);
+        } else if (annotation.type === GrammarType.PARTICLE) {
+            content += buildParticleAnnotationHtml(token.token, annotation);
         }
     }
 
