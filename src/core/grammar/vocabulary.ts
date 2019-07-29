@@ -106,6 +106,11 @@ vocabulary("ekeiva", GrammarType.PARTICLE, {
 // EXTENDED
 //-------------------------------------------------------------------------------------------------------------------
 
+vocabulary("upo", GrammarType.PREPOSITION, {
+    primary: "действующее лицо (англ. `by`)",
+    secondary: "глаг. + ὑπό + Дат. падеж"
+}, false);
+
 vocabulary("proc", GrammarType.PREPOSITION, {
     primary: "около, при",
     secondary: "+ Твор.падеж"
