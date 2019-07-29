@@ -17,7 +17,7 @@ register("$tou", {
     canonical: ["o", "to"],
     related: [],
 });
-register("$twi", {
+register("$tw/", {
     type: GrammarType.ARTICLE,
     gender: [Gender.MASCULINE, Gender.NEUTER],
     singularity: Singularity.SINGULAR,
@@ -49,7 +49,7 @@ register("$thc", {
     canonical: ["h"],
     related: [],
 });
-register("$thi", {
+register("$th/", {
     type: GrammarType.ARTICLE,
     gender: [Gender.FEMININE],
     singularity: Singularity.SINGULAR,
