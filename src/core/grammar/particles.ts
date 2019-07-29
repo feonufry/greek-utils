@@ -333,3 +333,302 @@ register("$auta", {
     person: Person.THIRD,
     canonical: ["auta"],
 });
+
+register("$outoc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    canonical: ["outoc"],
+});
+
+register("$toutou", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    canonical: ["outoc", "touto"],
+});
+
+register("$toutw/", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.DATIVE],
+    canonical: ["outoc", "touto"],
+});
+
+register("$toutov", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.ACCUSATIVE],
+    canonical: ["outoc"],
+});
+
+register("$auth", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    canonical: ["auth"],
+});
+
+register("$tauthc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    canonical: ["auth"],
+});
+
+register("$tauth/", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.DATIVE],
+    canonical: ["auth"],
+});
+
+register("$tauthv", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.ACCUSATIVE],
+    canonical: ["auth"],
+});
+
+register("$touto", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    canonical: ["touto"],
+});
+
+register("$outoi", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    canonical: ["outoi"],
+});
+
+register("$toutwv", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.FEMININE, Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.GENITIVE],
+    canonical: ["outoi", "autai", "tauta"],
+});
+
+register("$toutoic", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.DATIVE],
+    canonical: ["outoi", "tauta"],
+});
+
+register("$toutouc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.PLURAL,
+    case: [Case.ACCUSATIVE],
+    canonical: ["outoi"],
+});
+
+register("$autai", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    canonical: ["autai"],
+});
+
+register("$tautaic", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.DATIVE],
+    canonical: ["autai"],
+});
+
+register("$tautac", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.ACCUSATIVE],
+    canonical: ["autai"],
+});
+
+register("$tauta", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    canonical: ["tauta"],
+});
+
+register("$ekeivoc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoc"],
+});
+
+register("$ekeivou", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoc", "ekeivo"],
+});
+
+register("ekeivw/", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.DATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoc", "ekeivo"],
+});
+
+register("$ekeivov", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.ACCUSATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoc"],
+});
+
+register("$ekeivoi", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoi"],
+});
+
+register("$ekeivwv", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.GENITIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoi", "ekeiva"],
+});
+
+register("$ekeivoic", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE, Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.DATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoi", "ekeiva"],
+});
+
+register("$ekeivouc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.MASCULINE],
+    singularity: Singularity.PLURAL,
+    case: [Case.ACCUSATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivoi"],
+});
+
+register("$ekeivh", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivh"],
+});
+
+register("$ekeivhc", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivh"],
+});
+
+register("$ekeivh/", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.DATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivh"],
+});
+
+register("$ekeivhv", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.ACCUSATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivh"],
+});
+
+register("$ekeivai", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivai"],
+});
+
+register("$ekeivwv", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.GENITIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivai"],
+});
+
+register("$ekeivaic", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.DATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivai"],
+});
+
+register("$ekeivac", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.ACCUSATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivai"],
+});
+
+register("$ekeivo", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.NEUTER],
+    singularity: Singularity.SINGULAR,
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeivo"],
+});
+
+register("$ekeiva", {
+    type: GrammarType.PARTICLE,
+    gender: [Gender.NEUTER],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    person: Person.THIRD,
+    canonical: ["ekeiva"],
+});
+

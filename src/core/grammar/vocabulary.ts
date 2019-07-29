@@ -51,6 +51,57 @@ vocabulary("auta", GrammarType.PARTICLE, {
     secondary: "в функции личного употребляется в косвенных падежах"
 }, false);
 
+vocabulary("outoc", GrammarType.PARTICLE, {
+    primary: "этот",
+}, false);
+
+vocabulary("auth", GrammarType.PARTICLE, {
+    primary: "эта",
+}, false);
+
+vocabulary("touto", GrammarType.PARTICLE, {
+    primary: "это",
+}, false);
+
+vocabulary("outoi", GrammarType.PARTICLE, {
+    primary: "эти - муж.род",
+}, false);
+
+vocabulary("autai", GrammarType.PARTICLE, {
+    primary: "эти - жен.род",
+}, false);
+
+vocabulary("tauta", GrammarType.PARTICLE, {
+    primary: "эти - ср.род",
+}, false);
+
+vocabulary("ekeivoc", GrammarType.PARTICLE, {
+    primary: "тот",
+}, false);
+
+vocabulary("ekeivh", GrammarType.PARTICLE, {
+    primary: "та",
+}, false);
+
+vocabulary("ekeivo", GrammarType.PARTICLE, {
+    primary: "то",
+}, false);
+
+vocabulary("ekeivoi", GrammarType.PARTICLE, {
+    primary: "те - муж.род",
+    secondary: "указательное"
+}, false);
+
+vocabulary("ekeivai", GrammarType.PARTICLE, {
+    primary: "те - жен.род",
+    secondary: "указательное"
+}, false);
+
+vocabulary("ekeiva", GrammarType.PARTICLE, {
+    primary: "те - сред.род",
+    secondary: "указательное"
+}, false);
+
 //-------------------------------------------------------------------------------------------------------------------
 // EXTENDED
 //-------------------------------------------------------------------------------------------------------------------
