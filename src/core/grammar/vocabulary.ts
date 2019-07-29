@@ -136,3 +136,6 @@ vocabulary("qeotokoc", GrammarType.NOUN, {
     primary: "Богородица"
 }, false);
 
+vocabulary("pulai", GrammarType.NOUN, {
+    primary: "врата"
+}, false);
