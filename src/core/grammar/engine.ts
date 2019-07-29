@@ -38,11 +38,19 @@ export function annotate(token: Token): AnnotatedToken {
             canonicals.push(canonical);
         }
     }
+    const found = new Map<string, object>();
+    for (const foundVocabulary of vocabularyResult) {
+        found.set(foundVocabulary.word, {});
+    }
     for (const canonical of canonicals) {
+        if (found.has(canonical)) {
+            continue;
+        }
         const vocabularyForCanonical = search(canonical).vocabulary;
         for (const vocabulary of vocabularyForCanonical) {
             vocabularyResult.push(vocabulary);
         }
+        found.set(canonical, {});
     }
 
     return {
