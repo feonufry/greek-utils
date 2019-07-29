@@ -22,33 +22,33 @@ vocabulary("umeic", GrammarType.PARTICLE, {
 }, false);
 
 vocabulary("autoc", GrammarType.PARTICLE, {
-    primary: "он",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "он, сам",
+    secondary: "в функции личного употребляется в косвенных падежах; сам = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("auth", GrammarType.PARTICLE, {
-    primary: "она",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "она, сама",
+    secondary: "в функции личного употребляется в косвенных падежах; сама = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("auto", GrammarType.PARTICLE, {
-    primary: "оно",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "оно, само",
+    secondary: "в функции личного употребляется в косвенных падежах; само = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("autoi", GrammarType.PARTICLE, {
-    primary: "они - муж.род",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "они, сами - муж.род",
+    secondary: "в функции личного употребляется в косвенных падежах; сами = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("autai", GrammarType.PARTICLE, {
-    primary: "они - жен.род",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "они, сами - жен.род",
+    secondary: "в функции личного употребляется в косвенных падежах; сами = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("auta", GrammarType.PARTICLE, {
-    primary: "они - сред.род",
-    secondary: "в функции личного употребляется в косвенных падежах"
+    primary: "они, сами - сред.род",
+    secondary: "в функции личного употребляется в косвенных падежах; сами = арт. + мест., сущ. + мест."
 }, false);
 
 vocabulary("outoc", GrammarType.PARTICLE, {
