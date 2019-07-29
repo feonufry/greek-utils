@@ -1,4 +1,5 @@
 
+import "./aliases";
 import "./vocabulary";
 import "./articles";
 import "./verbs";
@@ -13,6 +14,7 @@ export interface AnnotatedToken {
     token: Token;
     annotations: GrammarAnnotation[];
     vocabulary: VocabularyEntry[];
+    aliases: string[];
 }
 
 export function annotate(token: Token): AnnotatedToken {
@@ -43,7 +45,12 @@ export function annotate(token: Token): AnnotatedToken {
         }
     }
 
-    return { token, annotations, vocabulary: vocabularyResult };
+    return {
+        token,
+        annotations,
+        vocabulary: vocabularyResult,
+        aliases: searchResult.aliases,
+    };
 }
 
 function transformToCanonical(tokenTransliterated: string, annotation: CanonicalTransformationAware): string[] {

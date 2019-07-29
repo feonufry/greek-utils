@@ -119,4 +119,5 @@ export type GrammarAnnotation = ArticleAnnotation
 export interface SearchResult {
     vocabulary: VocabularyEntry[];
     annotations: GrammarAnnotation[];
+    aliases: string[];
 }

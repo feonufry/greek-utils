@@ -1,6 +1,11 @@
 import { untransliterate } from "../core/transliteration";
 import { tokenize } from "../core/scanning";
-import { buildGrammarAnnotationsHtml, buildSearchLinksHtml, buildVocabularyHtml } from "./annotations";
+import {
+    buildAliasesHtml,
+    buildGrammarAnnotationsHtml,
+    buildPrimarySearchLinksHtml,
+    buildVocabularyHtml
+} from "./annotations";
 import { annotate } from "../core/grammar/engine";
 
 function handleUntransliterate() {
@@ -19,8 +24,9 @@ function handleAnalyze() {
         const item = `<li class="list-group-item">
 <div class="d-flex w-100 justify-content-between">
     <h6 class="mb-1">${token.greek} <small class="text-muted">/ ${token.transliterated}</small></h6>
-    <small>${buildSearchLinksHtml(token.greek)}</small>
+    <small>${buildPrimarySearchLinksHtml(annotatedToken)}</small>
 </div>
+${buildAliasesHtml(annotatedToken.aliases)}
 ${buildGrammarAnnotationsHtml(annotatedToken)}
 ${buildVocabularyHtml(annotatedToken)}
 </li>`;

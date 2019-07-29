@@ -159,6 +159,13 @@ export function buildParticleAnnotationHtml(token: Token, annotation: ParticleAn
         + "</p>";
 }
 
+export function buildAliasesHtml(aliases: string[]) {
+    if (aliases.length === 0) {
+        return "";
+    }
+    return `<p>= ${aliases.map(a => untransliterate(a)).join(", ")}</p>`;
+}
+
 export function buildGrammarAnnotationsHtml(token: AnnotatedToken) {
     let content = "";
 
@@ -208,6 +215,14 @@ export function buildCanonicalSearchLinksHtml(annotation: CanonicalAware, exclud
         result.push(buildSearchLinksHtml(untransliterate(canonical), "secondary"));
     }
     return result.join(" ");
+}
+
+export function buildPrimarySearchLinksHtml(annotatedToken: AnnotatedToken) {
+    let links = buildSearchLinksHtml(annotatedToken.token.greek);
+    for (const alias of annotatedToken.aliases) {
+        links += " " + buildSearchLinksHtml(untransliterate(alias));
+    }
+    return links;
 }
 
 export function buildSearchLinksHtml(greek: string, look: string = "primary") {
