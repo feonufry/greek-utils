@@ -183,3 +183,101 @@ register("$eisiv", {
     canonical: ["eimi"],
     canonicalTransformations: []
 });
+
+register("omai", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "omai",
+        replacement: "w"
+    }]
+});
+
+register("omeqa", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "omeqa",
+        replacement: "w"
+    }]
+});
+
+register("h/", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "h/",
+        replacement: "w"
+    }]
+});
+
+register("esai", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "esai",
+        replacement: "w"
+    }]
+});
+
+register("esqe", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "esqe",
+        replacement: "w"
+    }]
+});
+
+register("etai", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "etai",
+        replacement: "w"
+    }]
+});
+
+register("ovtai", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.PRESENT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: [{
+        original: "ovtai",
+        replacement: "w"
+    }]
+});

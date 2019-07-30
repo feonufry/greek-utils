@@ -113,6 +113,8 @@ export function buildVoiceHtml(voice: Voice) {
     switch (voice) {
         case Voice.ACTIVE:
             return "<attr title='активный залог'>акт.</attr>";
+        case Voice.MEDIA_PASSIVE:
+            return "<attr title='медио-пассивный залог'>мед-пассивн.</attr>";
     }
     return "";
 }
