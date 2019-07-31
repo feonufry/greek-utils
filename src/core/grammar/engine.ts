@@ -1,17 +1,17 @@
-
 import "./aliases";
 import "./vocabulary";
+
 import "./articles";
+import "./particles";
 import "./verbs-to-be";
 import "./verbs";
-import "./noun-like";
-import "./particles";
 import "./participles";
+import "./noun-like";
 
-import { Token } from "../scanning";
-import { CanonicalTransformationAware, GrammarAnnotation, GrammarType, VocabularyEntry } from "./index";
-import { search } from "./registry";
-import { untransliterate } from "../transliteration";
+import {Token} from "../scanning";
+import {CanonicalTransformationAware, GrammarAnnotation, GrammarType, VocabularyEntry} from "./index";
+import {search} from "./registry";
+import {untransliterate} from "../transliteration";
 
 export interface AnnotatedToken {
     token: Token;
@@ -26,8 +26,16 @@ export function annotate(token: Token): AnnotatedToken {
 
     let vocabularyResult = searchResult.vocabulary;
     const canonicals: string[] = [];
+    const grammarTypes = new Set<GrammarType>();
+
+    sortAnnotations(searchResult.annotations);
     for (const annotation of searchResult.annotations) {
         let effectiveAnnotation = annotation;
+        if (annotation.type !== GrammarType.ARTICLE && grammarTypes.has(GrammarType.ARTICLE)
+                || annotation.type !== GrammarType.PARTICLE && grammarTypes.has(GrammarType.PARTICLE)) {
+            continue;
+        }
+
         if (annotation.type === GrammarType.VERB
                 || annotation.type === GrammarType.PARTICIPLE
                 || annotation.type === GrammarType.NOUN) {
@@ -41,6 +49,7 @@ export function annotate(token: Token): AnnotatedToken {
         for (const canonical of effectiveAnnotation.canonical) {
             canonicals.push(canonical);
         }
+        grammarTypes.add(effectiveAnnotation.type);
     }
     const found = new Map<string, object>();
     for (const foundVocabulary of vocabularyResult) {
@@ -63,6 +72,12 @@ export function annotate(token: Token): AnnotatedToken {
         vocabulary: vocabularyResult,
         aliases: searchResult.aliases,
     };
+}
+
+function sortAnnotations(annotations: GrammarAnnotation[]) {
+    annotations.sort((left, right) => left.type < right.type
+            ? -1
+            : (left.type === right.type ? 0 : 1));
 }
 
 function transformToCanonical(tokenTransliterated: string, annotation: CanonicalTransformationAware): string[] {
