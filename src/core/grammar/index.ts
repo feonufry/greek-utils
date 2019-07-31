@@ -25,7 +25,7 @@ export enum Mood {
 export enum Tense {
     PRESENT,
     IMPERFECT, // past incomplete
-    AORIST, // past complete
+    AORIST_1, // past complete
 }
 
 export enum Voice {

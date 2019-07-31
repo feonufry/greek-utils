@@ -99,8 +99,8 @@ export function buildTenseHtml(tense: Tense) {
             return "<attr title='настоящее время'>наст.вр.</attr>";
         case Tense.IMPERFECT:
             return "<attr title='имперфект (прошедшее время несовершенного вида)'>имперф.</attr>";
-        case Tense.AORIST:
-            return "<attr title='аорист (прошедшее время совершенного вида)'>аор.</attr>";
+        case Tense.AORIST_1:
+            return "<attr title='аорист I (прошедшее время совершенного вида)'>аор.I</attr>";
     }
     return "";
 }
