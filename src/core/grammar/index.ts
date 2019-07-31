@@ -31,6 +31,8 @@ export enum Tense {
 export enum Voice {
     ACTIVE,
     MEDIA_PASSIVE,
+    MEDIA,
+    PASSIVE,
 }
 
 export enum Person {

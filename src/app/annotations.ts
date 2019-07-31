@@ -119,6 +119,10 @@ export function buildVoiceHtml(voice: Voice) {
             return "<attr title='активный залог'>акт.</attr>";
         case Voice.MEDIA_PASSIVE:
             return "<attr title='медио-пассивный залог'>мед-пассивн.</attr>";
+        case Voice.MEDIA:
+            return "<attr title='медиальный залог (возвратный)'>мед.</attr>";
+        case Voice.PASSIVE:
+            return "<attr title='пассивный залог'>пассив.</attr>";
     }
     return "";
 }
