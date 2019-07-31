@@ -2,6 +2,7 @@
 import "./aliases";
 import "./vocabulary";
 import "./articles";
+import "./verbs-to-be";
 import "./verbs";
 import "./noun-like";
 import "./particles";
