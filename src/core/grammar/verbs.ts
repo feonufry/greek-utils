@@ -188,10 +188,7 @@ register("omev", {
     person: Person.FIRST,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "omev",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("omev", "w"),
 });
 
 register("eic", {
@@ -202,10 +199,7 @@ register("eic", {
     person: Person.SECOND,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "eic",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("eic", "w"),
 });
 
 register("ete", {
@@ -216,10 +210,7 @@ register("ete", {
     person: Person.SECOND,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ete",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("ete", "w"),
 });
 
 register("ei", {
@@ -230,10 +221,7 @@ register("ei", {
     person: Person.THIRD,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ei",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("ei", "w"),
 });
 
 register("ousi", {
@@ -244,10 +232,7 @@ register("ousi", {
     person: Person.THIRD,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ousi",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("ousi", "w"),
 });
 
 register("ousiv", {
@@ -258,10 +243,7 @@ register("ousiv", {
     person: Person.THIRD,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ousiv",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("ousiv", "w"),
 });
 
 // Present Media-Passive
@@ -274,10 +256,7 @@ register("omai", {
     person: Person.FIRST,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "omai",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("omai", "w", "omai"),
 });
 
 register("omeqa", {
@@ -288,10 +267,7 @@ register("omeqa", {
     person: Person.FIRST,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "omeqa",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("omeqa", "w", "omai"),
 });
 
 register("h/", {
@@ -302,10 +278,7 @@ register("h/", {
     person: Person.SECOND,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "h/",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("h/", "w", "omai"),
 });
 
 register("esai", {
@@ -316,10 +289,7 @@ register("esai", {
     person: Person.SECOND,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "esai",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("esai", "w", "omai"),
 });
 
 register("esqe", {
@@ -330,10 +300,7 @@ register("esqe", {
     person: Person.SECOND,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "esqe",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("esqe", "w", "omai"),
 });
 
 register("etai", {
@@ -344,10 +311,7 @@ register("etai", {
     person: Person.THIRD,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "etai",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("etai", "w", "omai"),
 });
 
 register("ovtai", {
@@ -358,10 +322,7 @@ register("ovtai", {
     person: Person.THIRD,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ovtai",
-        replacement: "w"
-    }]
+    canonicalTransformations: transform("ovtai", "w", "omai"),
 });
 
 // Imperfect Active
@@ -374,10 +335,7 @@ register("ov", {
     person: Person.FIRST,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ov",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("ov", "w"),
     incremented: true,
 });
 
@@ -389,10 +347,7 @@ register("omev", {
     person: Person.FIRST,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "omev",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("omev", "w"),
     incremented: true,
 });
 
@@ -404,10 +359,7 @@ register("ec", {
     person: Person.SECOND,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ec",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("ec", "w"),
     incremented: true,
 });
 
@@ -419,10 +371,7 @@ register("ete", {
     person: Person.SECOND,
     singularity: Singularity.PLURAL,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ete",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("ete", "w"),
     incremented: true,
 });
 
@@ -434,10 +383,7 @@ register("e", {
     person: Person.THIRD,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "e",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("e", "w"),
     incremented: true,
 });
 
@@ -449,9 +395,84 @@ register("ev", {
     person: Person.THIRD,
     singularity: Singularity.SINGULAR,
     canonical: [],
-    canonicalTransformations: [{
-        original: "ev",
-        replacement: "w"
-    }],
+    canonicalTransformations: transform("ev", "w"),
     incremented: true,
 });
+
+// Imperfect Medio-Passive
+
+register("omhv", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("omhv", "w", "omai"),
+    incremented: true,
+});
+
+register("omeqa", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: transform("omeqa", "w", "omai"),
+    incremented: true,
+});
+
+register("ou", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("ou", "w", "omai"),
+    incremented: true,
+});
+
+register("esqe", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: transform("esqe", "w", "omai"),
+    incremented: true,
+});
+
+register("eto", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("eto", "w", "omai"),
+    incremented: true,
+});
+
+register("ovto", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("ovto", "w", "omai"),
+    incremented: true,
+});
+
+function transform(original: string, ...replacements: string[]) {
+    return replacements.map(replacement => ({ original, replacement }));
+}
