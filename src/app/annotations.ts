@@ -4,7 +4,7 @@ import {
     Case,
     Gender,
     GrammarType,
-    Mood, NounAnnotation, ParticleAnnotation,
+    Mood, NounAnnotation, ParticipleAnnotation, ParticleAnnotation,
     Person,
     Singularity,
     Tense,
@@ -35,6 +35,8 @@ export function buildTypeHtml(type: GrammarType) {
             return "<span class='badge badge-info'>Союз</span>";
         case GrammarType.PARTICLE:
             return "<span class='badge badge-dark'>Част</span>";
+        case GrammarType.PARTICIPLE:
+            return "<span class='badge badge-primary'>Прич</span>";
     }
     return "";
 }
@@ -155,7 +157,14 @@ export function buildVerbAnnotationHtml(token: Token, annotation: VerbAnnotation
 
 export function buildNounAnnotationHtml(token: Token, annotation: NounAnnotation) {
     return `<p>${buildTypeHtml(annotation.type)} `
-        + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}</small> `
+        + `<small>${buildGendersHtml(annotation.gender)}; ${buildSingularityHtml(annotation.singularity)}; ${buildCasesHtml(annotation.case)}</small> `
+        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + "</p>";
+}
+
+export function buildParticipleAnnotationHtml(token: Token, annotation: ParticipleAnnotation) {
+    return `<p>${buildTypeHtml(annotation.type)} `
+        + `<small>${buildVoiceHtml(annotation.voice)}; ${buildTenseHtml(annotation.tense)}; ${buildGenderHtml(annotation.gender)}; ${buildSingularityHtml(annotation.singularity)}; ${buildCasesHtml(annotation.case)}</small> `
         + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
         + "</p>";
 }
@@ -188,6 +197,8 @@ export function buildGrammarAnnotationsHtml(token: AnnotatedToken) {
             content += buildVerbAnnotationHtml(token.token, annotation);
         } else if (annotation.type === GrammarType.PARTICLE) {
             content += buildParticleAnnotationHtml(token.token, annotation);
+        } else if (annotation.type === GrammarType.PARTICIPLE) {
+            content += buildParticipleAnnotationHtml(token.token, annotation);
         }
     }
 

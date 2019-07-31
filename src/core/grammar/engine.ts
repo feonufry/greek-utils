@@ -6,6 +6,7 @@ import "./verbs-to-be";
 import "./verbs";
 import "./noun-like";
 import "./particles";
+import "./participles";
 
 import { Token } from "../scanning";
 import { CanonicalTransformationAware, GrammarAnnotation, GrammarType, VocabularyEntry } from "./index";
@@ -28,6 +29,7 @@ export function annotate(token: Token): AnnotatedToken {
     for (const annotation of searchResult.annotations) {
         let effectiveAnnotation = annotation;
         if (annotation.type === GrammarType.VERB
+                || annotation.type === GrammarType.PARTICIPLE
                 || annotation.type === GrammarType.NOUN) {
 
             effectiveAnnotation = {

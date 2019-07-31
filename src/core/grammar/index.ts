@@ -51,6 +51,7 @@ export enum GrammarType {
     PREPOSITION, // предлог
     CONJUNCTION, // союз
     PARTICLE, // частица
+    PARTICIPLE, // причастие
 }
 
 export interface VocabularyEntryDescription {
@@ -118,10 +119,22 @@ export interface VerbAnnotation {
     incremented?: boolean;
 }
 
+export interface ParticipleAnnotation {
+    type: GrammarType.PARTICIPLE;
+    tense: Tense;
+    voice: Voice;
+    gender: Gender;
+    singularity: Singularity;
+    case: Case[];
+    canonical: string[];
+    canonicalTransformations: CanonicalTransformation[];
+}
+
 export type GrammarAnnotation = ArticleAnnotation
     | VerbAnnotation
     | NounAnnotation
-    | ParticleAnnotation;
+    | ParticleAnnotation
+    | ParticipleAnnotation;
 
 export interface SearchResult {
     vocabulary: VocabularyEntry[];
