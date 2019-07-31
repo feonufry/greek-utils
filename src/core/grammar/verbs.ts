@@ -1,5 +1,5 @@
 import { register } from "./registry";
-import { GrammarType, Mood, Person, Singularity, Tense, Voice } from "./index";
+import { CanonicalTransformation, GrammarType, Mood, Person, Singularity, Tense, Voice } from "./index";
 
 //===================================================================================
 //  TO BE
@@ -472,6 +472,270 @@ register("ovto", {
     canonicalTransformations: transform("ovto", "w", "omai"),
     incremented: true,
 });
+
+// Imperfect Medio-Passive
+
+register("omhv", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("omhv", "w", "omai"),
+    incremented: true,
+});
+
+register("omeqa", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.FIRST,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: transform("omeqa", "w", "omai"),
+    incremented: true,
+});
+
+register("ou", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("ou", "w", "omai"),
+    incremented: true,
+});
+
+register("esqe", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.SECOND,
+    singularity: Singularity.PLURAL,
+    canonical: [],
+    canonicalTransformations: transform("esqe", "w", "omai"),
+    incremented: true,
+});
+
+register("eto", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("eto", "w", "omai"),
+    incremented: true,
+});
+
+register("ovto", {
+    type: GrammarType.VERB,
+    mood: Mood.INDICATIVE,
+    tense: Tense.IMPERFECT,
+    voice: Voice.MEDIA_PASSIVE,
+    person: Person.THIRD,
+    singularity: Singularity.SINGULAR,
+    canonical: [],
+    canonicalTransformations: transform("ovto", "w", "omai"),
+    incremented: true,
+});
+
+// Aorist I Active
+
+const AoristActiveReplacementsSA = [
+    "w", "dw", "tw", "qw", "zw",
+];
+
+const AoristActiveReplacementsJA = [
+    "bw", "pw", "фw",
+];
+
+const AoristActiveReplacementsXA = [
+    "gw", "kw", "хw", "ssw",
+];
+
+function registerActiveAorist(suffixes: string[], person: Person, singularity: Singularity, transformations: CanonicalTransformation[]) {
+    for (const suffix of suffixes) {
+        register(suffix, {
+            type: GrammarType.VERB,
+            mood: Mood.INDICATIVE,
+            tense: Tense.AORIST,
+            voice: Voice.ACTIVE,
+            canonical: [],
+            canonicalTransformations: transformations,
+            incremented: true,
+            person,
+            singularity,
+        });
+    }
+}
+
+registerActiveAorist(
+    ["sa", "ja", "xa"],
+    Person.FIRST,
+    Singularity.SINGULAR,
+    [
+        ...transform("sa", ...AoristActiveReplacementsSA),
+        ...transform("ja", ...AoristActiveReplacementsJA),
+        ...transform("xa", ...AoristActiveReplacementsXA),
+    ]);
+
+registerActiveAorist(
+    ["samev", "jamev", "xamev"],
+    Person.FIRST,
+    Singularity.PLURAL,
+    [
+        ...transform("samev", ...AoristActiveReplacementsSA),
+        ...transform("jamev", ...AoristActiveReplacementsJA),
+        ...transform("xamev", ...AoristActiveReplacementsXA),
+    ]);
+
+registerActiveAorist(
+    ["sac", "jac", "xac"],
+    Person.SECOND,
+    Singularity.SINGULAR,
+    [
+        ...transform("sac", ...AoristActiveReplacementsSA),
+        ...transform("jac", ...AoristActiveReplacementsJA),
+        ...transform("xac", ...AoristActiveReplacementsXA),
+    ]);
+
+registerActiveAorist(
+    ["sate", "jate", "xate"],
+    Person.SECOND,
+    Singularity.PLURAL,
+    [
+        ...transform("sate", ...AoristActiveReplacementsSA),
+        ...transform("jate", ...AoristActiveReplacementsJA),
+        ...transform("xate", ...AoristActiveReplacementsXA),
+    ]);
+
+registerActiveAorist(
+    ["se", "je", "xe", "sev", "jev", "xev"],
+    Person.THIRD,
+    Singularity.SINGULAR,
+    [
+        ...transform("se", ...AoristActiveReplacementsSA),
+        ...transform("je", ...AoristActiveReplacementsJA),
+        ...transform("xe", ...AoristActiveReplacementsXA),
+        ...transform("sev", ...AoristActiveReplacementsSA),
+        ...transform("jev", ...AoristActiveReplacementsJA),
+        ...transform("xev", ...AoristActiveReplacementsXA),
+    ]);
+
+registerActiveAorist(
+    ["sav", "jav", "xav"],
+    Person.THIRD,
+    Singularity.PLURAL,
+    [
+        ...transform("sav", ...AoristActiveReplacementsSA),
+        ...transform("jav", ...AoristActiveReplacementsJA),
+        ...transform("xav", ...AoristActiveReplacementsXA),
+    ]);
+
+// Aorist I Medio-Passive
+
+const AoristMedioPassiveReplacementsSA = [
+    "w", "dw", "tw", "qw", "zw",
+    "omai", "domai", "tomai", "qomai", "zomai"
+];
+
+const AoristMedioPassiveReplacementsJA = [
+    "bw", "pw", "фw",
+    "bomai", "pomai", "фomai",
+];
+
+const AoristMedioPassiveReplacementsXA = [
+    "gw", "kw", "хw", "ssw",
+    "gomai", "komai", "xomai", "ssomai"
+];
+
+function registerMedioPassiveAorist(suffixes: string[], person: Person, singularity: Singularity, transformations: CanonicalTransformation[]) {
+    for (const suffix of suffixes) {
+        register(suffix, {
+            type: GrammarType.VERB,
+            mood: Mood.INDICATIVE,
+            tense: Tense.AORIST,
+            voice: Voice.MEDIA_PASSIVE,
+            canonical: [],
+            canonicalTransformations: transformations,
+            incremented: true,
+            person,
+            singularity,
+        });
+    }
+}
+
+registerMedioPassiveAorist(
+    ["samhv", "jamhv", "xamhv"],
+    Person.FIRST,
+    Singularity.SINGULAR,
+    [
+        ...transform("samhv", ...AoristMedioPassiveReplacementsSA),
+        ...transform("jamhv", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xamhv", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+registerMedioPassiveAorist(
+    ["sameqa", "jameqa", "xameqa"],
+    Person.FIRST,
+    Singularity.PLURAL,
+    [
+        ...transform("sameqa", ...AoristMedioPassiveReplacementsSA),
+        ...transform("jameqa", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xameqa", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+registerMedioPassiveAorist(
+    ["sw", "jw", "xw"],
+    Person.SECOND,
+    Singularity.SINGULAR,
+    [
+        ...transform("sw", ...AoristMedioPassiveReplacementsSA),
+        ...transform("jw", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xw", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+registerMedioPassiveAorist(
+    ["sasqe", "jasqe", "xasqe"],
+    Person.SECOND,
+    Singularity.PLURAL,
+    [
+        ...transform("sasqe", ...AoristMedioPassiveReplacementsSA),
+        ...transform("jasqe", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xasqe", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+registerMedioPassiveAorist(
+    ["sato", "jato", "xato"],
+    Person.THIRD,
+    Singularity.SINGULAR,
+    [
+        ...transform("sato", ...AoristMedioPassiveReplacementsSA),
+        ...transform("jato", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xato", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+registerMedioPassiveAorist(
+    ["savto", "javto", "xavto"],
+    Person.THIRD,
+    Singularity.PLURAL,
+    [
+        ...transform("savto", ...AoristMedioPassiveReplacementsSA),
+        ...transform("javto", ...AoristMedioPassiveReplacementsJA),
+        ...transform("xavto", ...AoristMedioPassiveReplacementsXA),
+    ]);
+
+//===================================================================================
+//  UTILS
+//===================================================================================
 
 function transform(original: string, ...replacements: string[]) {
     return replacements.map(replacement => ({ original, replacement }));
