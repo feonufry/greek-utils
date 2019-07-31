@@ -24,6 +24,7 @@ export enum Mood {
 
 export enum Tense {
     PRESENT,
+    IMPERFECT, // past incomplete
 }
 
 export enum Voice {
@@ -72,6 +73,7 @@ export interface CanonicalAware {
 
 export interface CanonicalTransformationAware {
     canonicalTransformations: CanonicalTransformation[];
+    incremented?: boolean;
 }
 
 export interface ArticleAnnotation {
@@ -110,6 +112,7 @@ export interface VerbAnnotation {
     singularity: Singularity;
     canonical: string[];
     canonicalTransformations: CanonicalTransformation[];
+    incremented?: boolean;
 }
 
 export type GrammarAnnotation = ArticleAnnotation

@@ -97,6 +97,8 @@ export function buildTenseHtml(tense: Tense) {
     switch (tense) {
         case Tense.PRESENT:
             return "<attr title='настоящее время'>наст.вр.</attr>";
+        case Tense.IMPERFECT:
+            return "<attr title='имперфект (прошедшее время несовершенного вида)'>имперф.</attr>";
     }
     return "";
 }

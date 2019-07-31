@@ -5,6 +5,10 @@ import { GrammarType } from "./index";
 // BASE
 //-------------------------------------------------------------------------------------------------------------------
 
+vocabulary("eimi", GrammarType.VERB, {
+    primary: "to be"
+}, false);
+
 vocabulary("ego", GrammarType.PARTICLE, {
     primary: "я"
 }, false);
