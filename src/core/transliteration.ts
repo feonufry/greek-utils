@@ -7,7 +7,7 @@ function transform(source: string, mapSource: string, mapDestination: string): s
     let result = "";
     for (const ch of source) {
         const mapIndex = mapSource.indexOf(ch);
-        if (mapIndex > 0 && mapDestination.length > mapIndex) {
+        if (mapIndex >= 0 && mapDestination.length > mapIndex) {
             result += mapDestination[mapIndex];
             continue;
         }
