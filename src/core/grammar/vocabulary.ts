@@ -110,6 +110,50 @@ vocabulary("ekeiva", GrammarType.PARTICLE, {
 // EXTENDED
 //-------------------------------------------------------------------------------------------------------------------
 
+vocabulary("ou", GrammarType.PARTICLE, {
+    primary: "не (отрицание)"
+}, true);
+
+vocabulary("de", GrammarType.PARTICLE, {
+    primary: "же, а, но",
+    secondary: "μέν... δέ = выражает неявное противопоставление, «с одной стороны... с другой стороны»"
+}, true);
+
+vocabulary("kai", GrammarType.CONJUNCTION, {
+    primary: "и; также, даже",
+    secondary: "καί... καί... = и... и, как... так и"
+}, true);
+
+vocabulary("apo", GrammarType.PREPOSITION, {
+    primary: "от; после, вслед за; начиная с",
+    secondary: "+ Род. падеж"
+}, false);
+
+vocabulary("dia", GrammarType.PREPOSITION, {
+    primary: "через, сквозь",
+    secondary: "+ Род.падеж"
+}, false);
+
+vocabulary("dia", GrammarType.PREPOSITION, {
+    primary: "из-за, вследствие",
+    secondary: "+ Твор.падеж"
+}, false);
+
+vocabulary("epi", GrammarType.PREPOSITION, {
+    primary: "на, над, перед лицом, в присутствии, во время",
+    secondary: "+ Род.падеж"
+}, false);
+
+vocabulary("epi", GrammarType.PREPOSITION, {
+    primary: "на, у, на основании",
+    secondary: "+ Дат.падеж"
+}, false);
+
+vocabulary("epi", GrammarType.PREPOSITION, {
+    primary: "на (кого, что), против, у, при, в (где?)",
+    secondary: "+ Твор.падеж"
+}, false);
+
 vocabulary("upo", GrammarType.PREPOSITION, {
     primary: "действующее лицо (англ. `by`)",
     secondary: "глаг. + ὑπό + Дат. падеж"
@@ -138,6 +182,11 @@ vocabulary("eita", GrammarType.ADVERB, {
     primary: "потом, затем, далее, после"
 });
 
+vocabulary("suv", GrammarType.PREPOSITION, {
+    primary: "c",
+    secondary: "+ Дат.падеж"
+}, false);
+
 
 //-------------------------------------------------------------------------------------------------------------------
 // CUSTOM
@@ -162,6 +211,21 @@ vocabulary("diakovoc", GrammarType.NOUN, {
 vocabulary("pavtwv", GrammarType.NOUN, {
     primary: "всем",
     secondary: "Род.п.,мн.ч.,муж.р,ср.р - all, every, each"
+}, false);
+
+vocabulary("pavtec", GrammarType.NOUN, {
+    primary: "все",
+    secondary: "Им.Зват.п.,мн.ч.,муж.р - all, every, each"
+}, false);
+
+vocabulary("pasav", GrammarType.NOUN, {
+    primary: "всем",
+    secondary: "Твор.п.,ед.ч.,жен.р - all, every, each"
+}, false);
+
+vocabulary("paswv", GrammarType.NOUN, {
+    primary: "всех",
+    secondary: "Род.п.,мн.ч.,жен.р - all, every, each"
 }, false);
 
 vocabulary("hsuхh/", GrammarType.ADVERB, {
@@ -197,5 +261,25 @@ vocabulary("qeotokoc", GrammarType.NOUN, {
 }, false);
 
 vocabulary("pulai", GrammarType.NOUN, {
-    primary: "врата"
+    primary: "врата",
+}, false);
+
+vocabulary("khroc", GrammarType.NOUN, {
+    primary: "воск = восковая свеча?",
+}, false);
+
+vocabulary("proestwtoc", GrammarType.NOUN, {
+    primary: "предстоятель",
+}, false);
+
+vocabulary("iereuc", GrammarType.NOUN, {
+    primary: "иерей",
+}, false);
+
+vocabulary("qusiasthriov", GrammarType.NOUN, {
+    primary: "алтарь",
+}, false);
+
+vocabulary("ekklhsiav", GrammarType.NOUN, {
+    primary: "церковь",
 }, false);
