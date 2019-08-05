@@ -1,11 +1,23 @@
 import { isLetter } from "./utils";
 
-const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWabgdezhqiklmvxoprsctuфхjw/";
-const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψω\u037a";
+const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWabgdezhqiklmvxoprsctuфхjw/`'~$^;.,:#=@";
+const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψω\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
+const Vowels = "aehiouw";
+
+// DIALYTIKA     = ◌̈  (u+0308)
+// OXIA          '     (u+0301 or 0341)
+// VARIA         `     (u+0300 or 0340)
+// PERISPOMENI   ~ ◌͂  (u+0342)
+// PSILI         ^  ◌̓ (u+0313) (smooth breathing)
+// DASIA         $ ◌̔  (u+0314)
+// YPOGEGRAMMENI / ◌ͅ   (u+0345)
+// apostrophe    @
+// CORONIS - ◌̓ (u+0343)
 
 function transform(source: string, mapSource: string, mapDestination: string): string {
     let result = "";
-    for (const ch of source) {
+    for (let sourceIndex = 0; sourceIndex < source.length; ++sourceIndex) {
+        const ch = source[sourceIndex];
         const mapIndex = mapSource.indexOf(ch);
         if (mapIndex >= 0 && mapDestination.length > mapIndex) {
             result += mapDestination[mapIndex];
@@ -26,4 +38,10 @@ export function untransliterate(source: string): string {
 
 export function transliterate(source: string): string {
     return transform(source, Greek, Transliterated);
+}
+
+export function isVowel(ch: string): boolean {
+    const chLower = ch.toLowerCase();
+    const index = Vowels.indexOf(chLower);
+    return index >= 0;
 }
