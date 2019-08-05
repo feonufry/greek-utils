@@ -144,28 +144,28 @@ export function buildPersonHtml(person: Person) {
 export function buildArticleAnnotationHtml(token: Token, annotation: ArticleAnnotation) {
     return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}</small> `
-        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + buildCanonicalSearchLinksHtml(annotation, token.transliteratedBasic)
         + "</p>";
 }
 
 export function buildVerbAnnotationHtml(token: Token, annotation: VerbAnnotation) {
     return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildMoodHtml(annotation.mood)}; ${buildVoiceHtml(annotation.voice)}; ${buildTenseHtml(annotation.tense)}; ${buildPersonHtml(annotation.person)}; ${buildSingularityHtml(annotation.singularity)}</small> `
-        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + buildCanonicalSearchLinksHtml(annotation, token.transliteratedBasic)
         + "</p>";
 }
 
 export function buildNounAnnotationHtml(token: Token, annotation: NounAnnotation) {
     return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildGendersHtml(annotation.gender)}; ${buildSingularityHtml(annotation.singularity)}; ${buildCasesHtml(annotation.case)}</small> `
-        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + buildCanonicalSearchLinksHtml(annotation, token.transliteratedBasic)
         + "</p>";
 }
 
 export function buildParticipleAnnotationHtml(token: Token, annotation: ParticipleAnnotation) {
     return `<p>${buildTypeHtml(annotation.type)} `
         + `<small>${buildVoiceHtml(annotation.voice)}; ${buildTenseHtml(annotation.tense)}; ${buildGenderHtml(annotation.gender)}; ${buildSingularityHtml(annotation.singularity)}; ${buildCasesHtml(annotation.case)}</small> `
-        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + buildCanonicalSearchLinksHtml(annotation, token.transliteratedBasic)
         + "</p>";
 }
 
@@ -174,7 +174,7 @@ export function buildParticleAnnotationHtml(token: Token, annotation: ParticleAn
         + `<small>${buildGendersHtml(annotation.gender)}; ${buildCasesHtml(annotation.case)}; ${buildSingularityHtml(annotation.singularity)}; `
         + (annotation.person != null ? buildPersonHtml(annotation.person) : "")
         + "</small>"
-        + buildCanonicalSearchLinksHtml(annotation, token.transliterated)
+        + buildCanonicalSearchLinksHtml(annotation, token.transliteratedBasic)
         + "</p>";
 }
 
@@ -228,18 +228,23 @@ export function buildVocabularyHtml(token: AnnotatedToken) {
 }
 
 export function buildCanonicalSearchLinksHtml(annotation: CanonicalAware, exclude: string = "") {
-    const result: string[] = [];
+    const links: string[] = [];
+    const words: string[] = [];
     for (const canonical of annotation.canonical) {
         if (canonical === exclude) {
             continue;
         }
-        result.push(buildSearchLinksHtml(untransliterate(canonical), "secondary"));
+        const greek = untransliterate(canonical);
+        words.push(greek);
+        links.push(buildSearchLinksHtml(greek, "secondary"));
     }
-    return result.join(" ");
+    return links.length > 0
+        ? words.join(", ") + " \\ " + links.join(" ")
+        : "";
 }
 
 export function buildPrimarySearchLinksHtml(annotatedToken: AnnotatedToken) {
-    let links = buildSearchLinksHtml(annotatedToken.token.greek);
+    let links = buildSearchLinksHtml(annotatedToken.token.greekBasic);
     for (const alias of annotatedToken.aliases) {
         links += " " + buildSearchLinksHtml(untransliterate(alias));
     }

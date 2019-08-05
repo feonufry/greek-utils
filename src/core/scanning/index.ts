@@ -2,38 +2,56 @@ import { isLetter } from "../utils";
 import { untransliterate } from "../transliteration";
 
 const Separators = ".,;:!?- ";
+const Diactric = "`'~$^#=";
 
 function isSeparator(ch: string): boolean {
     const position = Separators.indexOf(ch);
     return position >= 0;
 }
 
+function isDiactric(ch: string): boolean {
+    const position = Diactric.indexOf(ch);
+    return position >= 0;
+}
+
 export interface Token {
-    transliterated: string;
-    greek: string;
+    transliteratedFull: string;
+    transliteratedBasic: string;
+    greekFull: string;
+    greekBasic: string;
 }
 
 export function* tokenize(inputTranslit: string): IterableIterator<Token> {
-    let token = "";
+    let tokenFull = "";
+    let tokenBasic = "";
     for (const ch of inputTranslit) {
         if (isLetter(ch) || ch === "/" || ch === "@") {
-            token += ch;
+            tokenBasic += ch;
+            tokenFull += ch;
             continue;
         }
-        if (isSeparator(ch) && token.length > 0) {
-            yield createToken(token);
-            token = "";
+        if (isDiactric(ch)) {
+            tokenFull += ch;
+            continue;
+        }
+        if (isSeparator(ch) && tokenBasic.length > 0) {
+            yield createToken(tokenFull, tokenBasic);
+            tokenBasic = "";
+            tokenFull = "";
         }
     }
-    if (token.length > 0) {
-        yield createToken(token);
+    if (tokenBasic.length > 0) {
+        yield createToken(tokenFull, tokenBasic);
     }
 }
 
-function createToken(translit: string): Token {
-    const translitLower = translit.toLowerCase();
+function createToken(translitFull: string, translitBasic: string): Token {
+    const translitFullLower = translitFull.toLowerCase();
+    const translitBasicLower = translitBasic.toLowerCase();
     return {
-        transliterated: translitLower,
-        greek: untransliterate(translitLower),
+        transliteratedFull: translitFullLower,
+        transliteratedBasic: translitBasicLower,
+        greekFull: untransliterate(translitFullLower),
+        greekBasic: untransliterate(translitBasicLower),
     };
 }

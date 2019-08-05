@@ -21,7 +21,7 @@ export interface AnnotatedToken {
 }
 
 export function annotate(token: Token): AnnotatedToken {
-    const searchResult = search(token.transliterated);
+    const searchResult = search(token.transliteratedBasic);
     const annotations: GrammarAnnotation[] = [];
 
     let vocabularyResult = searchResult.vocabulary;
@@ -42,7 +42,7 @@ export function annotate(token: Token): AnnotatedToken {
 
             effectiveAnnotation = {
                 ...annotation,
-                canonical: transformToCanonical(token.transliterated, annotation),
+                canonical: transformToCanonical(token.transliteratedBasic, annotation),
             };
         }
         annotations.push(effectiveAnnotation);

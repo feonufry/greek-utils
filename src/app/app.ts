@@ -23,7 +23,7 @@ function handleAnalyze() {
 
         const item = `<li class="list-group-item">
 <div class="d-flex w-100 justify-content-between">
-    <h6 class="mb-1">${token.greek} <small class="text-muted">/ ${token.transliterated}</small></h6>
+    <h6 class="mb-1">${token.greekFull} \\ ${token.greekBasic} <small class="text-muted">\\ ${token.transliteratedFull} \\ ${token.transliteratedBasic}</small></h6>
     <small>${buildPrimarySearchLinksHtml(annotatedToken)}</small>
 </div>
 ${buildAliasesHtml(annotatedToken.aliases)}
