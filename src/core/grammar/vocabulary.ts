@@ -283,3 +283,16 @@ vocabulary("qusiasthriov", GrammarType.NOUN, {
 vocabulary("ekklhsiav", GrammarType.NOUN, {
     primary: "церковь",
 }, false);
+
+vocabulary("tessarakosth", GrammarType.NOUN, {
+    primary: "четыредесятница",
+}, false);
+
+vocabulary("agia", GrammarType.ADJECTIVE, {
+    primary: "святая",
+}, false);
+
+vocabulary("givomai", GrammarType.VERB, {
+    primary: "совершаться, происходить",
+    secondary: "напр. ектения"
+}, false);
