@@ -52,6 +52,7 @@ export enum GrammarType {
     VERB,
     PARTICIPLE, // причастие
     ADVERB, // наречие
+    PHRASE_INCIPIO,
 }
 
 export interface VocabularyEntryDescription {

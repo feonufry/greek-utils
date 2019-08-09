@@ -37,6 +37,8 @@ export function buildTypeHtml(type: GrammarType) {
             return "<span class='badge badge-dark'>Част</span>";
         case GrammarType.PARTICIPLE:
             return "<span class='badge badge-primary'>Прич</span>";
+        case GrammarType.PHRASE_INCIPIO:
+            return "<span class='badge badge-dark'>incipio</span>";
     }
     return "";
 }

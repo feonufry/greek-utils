@@ -296,3 +296,46 @@ vocabulary("givomai", GrammarType.VERB, {
     primary: "совершаться, происходить",
     secondary: "напр. ектения"
 }, false);
+
+vocabulary("avagvwsic", GrammarType.NOUN, {
+    primary: "чтение",
+}, false);
+
+vocabulary("hхoc", GrammarType.NOUN, {
+    primary: "глас",
+}, false);
+
+vocabulary("w/dh", GrammarType.NOUN, {
+    primary: "песнь (канона)",
+}, false);
+
+vocabulary("kaqisma", GrammarType.NOUN, {
+    primary: "седален",
+}, false);
+
+vocabulary("upakoh", GrammarType.NOUN, {
+    primary: "ипакои",
+}, false);
+
+vocabulary("kovtakiov", GrammarType.NOUN, {
+    primary: "кондак",
+}, false);
+
+vocabulary("oikov", GrammarType.NOUN, {
+    primary: "икос",
+}, false);
+
+vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
+    primary: "Предварившия утро",
+    secondary: "Ипакои Пасхи - Προλαβοῦσαι τὸν ὄρθρον",
+}, false);
+
+vocabulary("avastasiv", GrammarType.PHRASE_INCIPIO, {
+    primary: "Воскресение Христово видевше",
+    secondary: "̓Ανάστασιν Χριστοῦ θεασάμενοι",
+}, false);
+
+vocabulary("dei", GrammarType.PHRASE_INCIPIO, {
+    primary: "Ведати же подобает, что",
+    secondary: "Δεῖ δὲ γινώσκειν, ὅτι",
+}, false);
