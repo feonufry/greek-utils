@@ -334,6 +334,10 @@ vocabulary("oikov", GrammarType.NOUN, {
     primary: "икос",
 }, false);
 
+vocabulary("exaposteilariov", GrammarType.NOUN, {
+    primary: "Эксапостиларий",
+}, false);
+
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
     primary: "Предварившия утро",
     secondary: "Ипакои Пасхи - Προλαβοῦσαι τὸν ὄρθρον",
@@ -347,6 +351,11 @@ vocabulary("avastasiv", GrammarType.PHRASE_INCIPIO, {
 vocabulary("фwtizou", GrammarType.PHRASE_INCIPIO, {
     primary: "Светися светися",
     secondary: "Φωτίζου φωτίζου - ирмос 9-й песни канона Пасхи",
+}, false);
+
+vocabulary("sarki", GrammarType.PHRASE_INCIPIO, {
+    primary: "Плотию уснув яко мертв",
+    secondary: "Σαρκὶ ὑπνώσας ὡς θνητός - эксапостиларий Пасхи",
 }, false);
 
 vocabulary("dei", GrammarType.PHRASE_INCIPIO, {
