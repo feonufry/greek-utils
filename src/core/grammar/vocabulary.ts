@@ -187,6 +187,11 @@ vocabulary("suv", GrammarType.PREPOSITION, {
     secondary: "+ Дат.падеж"
 }, false);
 
+vocabulary("meхri", GrammarType.PREPOSITION, {
+    primary: "(вплоть) до; до конца; до пределов, в пределах, в меру; приблизительно, около; до",
+    secondary: "+ Род.падеж"
+}, false);
+
 
 //-------------------------------------------------------------------------------------------------------------------
 // CUSTOM
@@ -297,6 +302,10 @@ vocabulary("givomai", GrammarType.VERB, {
     secondary: "напр. ектения"
 }, false);
 
+vocabulary("apolush", GrammarType.NOUN, {
+    primary: "Отпуст",
+}, false);
+
 vocabulary("avagvwsic", GrammarType.NOUN, {
     primary: "чтение",
 }, false);
@@ -333,6 +342,11 @@ vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
 vocabulary("avastasiv", GrammarType.PHRASE_INCIPIO, {
     primary: "Воскресение Христово видевше",
     secondary: "̓Ανάστασιν Χριστοῦ θεασάμενοι",
+}, false);
+
+vocabulary("фwtizou", GrammarType.PHRASE_INCIPIO, {
+    primary: "Светися светися",
+    secondary: "Φωτίζου φωτίζου - ирмос 9-й песни канона Пасхи",
 }, false);
 
 vocabulary("dei", GrammarType.PHRASE_INCIPIO, {

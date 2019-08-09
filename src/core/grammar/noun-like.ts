@@ -43,7 +43,7 @@ register("h", {
     type: GrammarType.NOUN,
     gender: [Gender.FEMININE],
     singularity: Singularity.SINGULAR,
-    case: [Case.NOMINATIVE, Case.VOCATIVE],
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
     canonical: [],
     canonicalTransformations: []
 });
@@ -283,6 +283,42 @@ register("oic", {
     case: [Case.DATIVE],
     canonical: [],
     canonicalTransformations: transform("oic", "ov")
+});
+
+
+register("hc", {
+    type: GrammarType.NOUN,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    canonical: [],
+    canonicalTransformations: transform("hc", "h")
+});
+register("ewc", {
+    type: GrammarType.NOUN,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.SINGULAR,
+    case: [Case.GENITIVE],
+    canonical: [],
+    canonicalTransformations: transform("ewc", "h")
+});
+
+register("eic", {
+    type: GrammarType.NOUN,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    canonical: [],
+    canonicalTransformations: transform("eic", "h")
+});
+
+register("ewv", {
+    type: GrammarType.NOUN,
+    gender: [Gender.FEMININE],
+    singularity: Singularity.PLURAL,
+    case: [Case.GENITIVE],
+    canonical: [],
+    canonicalTransformations: transform("ewv", "h")
 });
 
 // Utils
