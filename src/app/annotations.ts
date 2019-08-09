@@ -15,6 +15,13 @@ import { AnnotatedToken } from "../core/grammar/engine";
 import { untransliterate } from "../core/transliteration";
 import { Token } from "../core/scanning";
 
+export function buildNumberHtml(number: number|null) {
+    if (number == null) {
+        return "";
+    }
+    return `<p><span class='badge badge-dark'>Числ.</span> ${number}</p>`;
+}
+
 export function buildTypeHtml(type: GrammarType) {
     switch (type) {
         case GrammarType.ARTICLE:

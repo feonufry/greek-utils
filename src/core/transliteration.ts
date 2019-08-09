@@ -1,10 +1,10 @@
 import { isLetter } from "./utils";
 
-const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWabgdezhqiklmvxoprsctuфхjw/`'~$^;.,:#=@";
-const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψω\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
+const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWЧabgdezhqiklmvxoprsctuфхjwч/`'~$^;.,:#=@";
+const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨϞΩαβγδεζηθικλμνξοπρσςτυφχψωϟ\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
 
-const Upper = "ABGDEZHQIKLMNXOPRSTYФХJW";
-const Lower = "abgdezhqiklmvxoprstuфхjw";
+const Upper = "ABGDEZHQIKLMNXOPRSTYФХJWЧ";
+const Lower = "abgdezhqiklmvxoprstuфхjwч";
 
 // DIALYTIKA     = ◌̈  (u+0308)
 // OXIA          '     (u+0301 or 0341)

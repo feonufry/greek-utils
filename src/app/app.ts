@@ -2,7 +2,7 @@ import { untransliterate } from "../core/transliteration";
 import { tokenize } from "../core/scanning";
 import {
     buildAliasesHtml,
-    buildGrammarAnnotationsHtml,
+    buildGrammarAnnotationsHtml, buildNumberHtml,
     buildPrimarySearchLinksHtml,
     buildVocabularyHtml
 } from "./annotations";
@@ -26,6 +26,7 @@ function handleAnalyze() {
     <h6 class="mb-1">${token.greekFull} \\ ${token.greekBasic} <small class="text-muted">\\ ${token.transliteratedFull} \\ ${token.transliteratedBasic}</small></h6>
     <small>${buildPrimarySearchLinksHtml(annotatedToken)}</small>
 </div>
+${buildNumberHtml(annotatedToken.number)}
 ${buildAliasesHtml(annotatedToken.aliases)}
 ${buildGrammarAnnotationsHtml(annotatedToken)}
 ${buildVocabularyHtml(annotatedToken)}

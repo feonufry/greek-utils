@@ -13,11 +13,45 @@ import {CanonicalTransformationAware, GrammarAnnotation, GrammarType, Vocabulary
 import {search} from "./registry";
 import {untransliterate} from "../transliteration";
 
+interface NumberMappings {
+    [key: string]: number;
+}
+
+const NumberMapping: NumberMappings = {
+    "a": 1,
+    "b": 2,
+    "g": 3,
+    "d": 4,
+    "e": 5,
+    "c": 6,
+    "z": 7,
+    "h": 8,
+    "q": 9,
+    "i": 10,
+    "k": 20,
+    "l": 30,
+    "m": 40,
+    "v": 50,
+    "x": 60,
+    "o": 70,
+    "p": 80,
+    "ч": 90,
+    "r": 100,
+    "s": 200,
+    "t": 300,
+    "u": 400,
+    "ф": 500,
+    "х": 600,
+    "j": 700,
+    "w": 800,
+};
+
 export interface AnnotatedToken {
     token: Token;
     annotations: GrammarAnnotation[];
     vocabulary: VocabularyEntry[];
     aliases: string[];
+    number: number | null;
 }
 
 export function annotate(token: Token): AnnotatedToken {
@@ -71,7 +105,22 @@ export function annotate(token: Token): AnnotatedToken {
         annotations,
         vocabulary: vocabularyResult,
         aliases: searchResult.aliases,
+        number: getNumber(token.transliteratedBasic),
     };
+}
+
+function getNumber(token: string): number|null {
+    if (!token.endsWith("#")) {
+        return null;
+    }
+    let number = 0;
+    for (let index = 0; index < token.length - 1; ++index) {
+        const map = NumberMapping[token[index]];
+        if (map != null) {
+            number += map;
+        }
+    }
+    return number;
 }
 
 function sortAnnotations(annotations: GrammarAnnotation[]) {

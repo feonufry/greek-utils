@@ -2,7 +2,7 @@ import { isLetter } from "../utils";
 import { toLowerTransliteration, untransliterate } from "../transliteration";
 
 const Separators = ".,;:!?- ";
-const Diactric = "`'~$^#=";
+const Diactric = "`'~$^=";
 
 function isSeparator(ch: string): boolean {
     const position = Separators.indexOf(ch);
@@ -25,7 +25,7 @@ export function* tokenize(inputTranslit: string): IterableIterator<Token> {
     let tokenFull = "";
     let tokenBasic = "";
     for (const ch of inputTranslit) {
-        if (isLetter(ch) || ch === "/" || ch === "@") {
+        if (isLetter(ch) || ch === "/" || ch === "@" || ch === "#") {
             tokenBasic += ch;
             tokenFull += ch;
             continue;
