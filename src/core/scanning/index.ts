@@ -1,5 +1,5 @@
 import { isLetter } from "../utils";
-import { untransliterate } from "../transliteration";
+import { toLowerTransliteration, untransliterate } from "../transliteration";
 
 const Separators = ".,;:!?- ";
 const Diactric = "`'~$^#=";
@@ -46,8 +46,8 @@ export function* tokenize(inputTranslit: string): IterableIterator<Token> {
 }
 
 function createToken(translitFull: string, translitBasic: string): Token {
-    const translitFullLower = translitFull.toLowerCase();
-    const translitBasicLower = translitBasic.toLowerCase();
+    const translitFullLower = toLowerTransliteration(translitFull);
+    const translitBasicLower = toLowerTransliteration(translitBasic);
     return {
         transliteratedFull: translitFullLower,
         transliteratedBasic: translitBasicLower,

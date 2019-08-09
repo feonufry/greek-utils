@@ -1,5 +1,9 @@
 
 export function isLetter(ch: string): boolean {
-    const chLower = ch.toLowerCase();
-    return /[a-z]/.test(chLower) || /[а-я]/.test(chLower) || /[α-ω]/.test(chLower);
+    return /[a-z]/.test(ch)
+        || /[A-Z]/.test(ch)
+        || /[а-я]/.test(ch)
+        || /[А-Я]/.test(ch)
+        || /[α-ω]/.test(ch)
+        || /[Α-Ω]/.test(ch);
 }
