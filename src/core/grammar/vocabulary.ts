@@ -302,6 +302,10 @@ vocabulary("givomai", GrammarType.VERB, {
     secondary: "напр. ектения"
 }, false);
 
+vocabulary("allo", GrammarType.ADJECTIVE, {
+    primary: "иной",
+}, false);
+
 vocabulary("apolush", GrammarType.NOUN, {
     primary: "Отпуст",
 }, false);
@@ -336,6 +340,10 @@ vocabulary("oikov", GrammarType.NOUN, {
 
 vocabulary("exaposteilariov", GrammarType.NOUN, {
     primary: "Эксапостиларий",
+}, false);
+
+vocabulary("idiomelov", GrammarType.NOUN, {
+    primary: "самогласен",
 }, false);
 
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
