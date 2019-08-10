@@ -1,7 +1,7 @@
 import { isLetter } from "./utils";
 
 const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWЧabgdezhqiklmvxoprsctuфхjwч/`'~$^;.,:#=@";
-const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϞαβγδεζηϑικλμνξοπρσςτυφχψωϟ\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
+const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϞαβγδεζηθικλμνξοπρσςτυφχψωϟ\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
 
 const Upper = "ABGDEZHQIKLMNXOPRSTYФХJWЧ";
 const Lower = "abgdezhqiklmvxoprstuфхjwч";
@@ -53,8 +53,11 @@ function transform(source: string, mapSource: string, mapDestination: string): s
     return result;
 }
 
-export function untransliterate(source: string): string {
-    return transform(source, Transliterated, Greek);
+export function untransliterate(source: string, ancient = false): string {
+    const modern = transform(source, Transliterated, Greek);
+    return ancient
+        ? modern.replace("θ", "ϑ")
+        : modern;
 }
 
 export function transliterate(source: string): string {

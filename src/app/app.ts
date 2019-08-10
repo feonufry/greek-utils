@@ -10,7 +10,7 @@ import { annotate } from "../core/grammar/engine";
 
 function handleUntransliterate() {
     const source = $("#sourceText").val() as string;
-    const result = untransliterate(source);
+    const result = untransliterate(source, true /*ancient*/);
     $("#resultText").val(result);
 }
 
