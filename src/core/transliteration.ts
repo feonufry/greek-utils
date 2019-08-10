@@ -56,7 +56,7 @@ function transform(source: string, mapSource: string, mapDestination: string): s
 export function untransliterate(source: string, ancient = false): string {
     const modern = transform(source, Transliterated, Greek);
     return ancient
-        ? modern.replace("θ", "ϑ")
+        ? modern.replace(/θ/g, "ϑ")
         : modern;
 }
 
