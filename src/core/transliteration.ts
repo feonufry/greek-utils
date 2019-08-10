@@ -1,7 +1,7 @@
 import { isLetter } from "./utils";
 
 const Transliterated = "ABGDEZHQIKLMNXOPRSTYФХJWЧabgdezhqiklmvxoprsctuфхjwч/`'~$^;.,:#=@";
-const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϞαβγδεζηθικλμνξοπρσςτυφχψωϟ\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
+const Greek = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϞαβγδεζηϑικλμνξοπρσςτυφχψωϟ\u0345\u0300\u0301\u0342\u0314\u0313\u037e.,\u0387\u0374\u0308'";
 
 const Upper = "ABGDEZHQIKLMNXOPRSTYФХJWЧ";
 const Lower = "abgdezhqiklmvxoprstuфхjwч";

@@ -5,5 +5,8 @@ export function isLetter(ch: string): boolean {
         || /[а-я]/.test(ch)
         || /[А-Я]/.test(ch)
         || /[α-ω]/.test(ch)
+        || ch === "ϑ"
+        || ch === "Ϟ"
+        || ch === "ϟ"
         || /[Α-Ω]/.test(ch);
 }
