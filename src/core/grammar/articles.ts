@@ -29,7 +29,7 @@ register("$tov", {
     type: GrammarType.ARTICLE,
     gender: [Gender.MASCULINE, Gender.NEUTER],
     singularity: Singularity.SINGULAR,
-    case: [Case.DATIVE],
+    case: [Case.ACCUSATIVE],
     canonical: ["o"],
     related: [],
 });
