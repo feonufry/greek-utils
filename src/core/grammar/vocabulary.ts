@@ -174,6 +174,15 @@ vocabulary("proc", GrammarType.PREPOSITION, {
     secondary: "+ Твор.падеж"
 }, false);
 
+vocabulary("proc", GrammarType.PREPOSITION, {
+    primary: "подобен"
+}, false);
+
+vocabulary("хwric", GrammarType.PREPOSITION, {
+    primary: "без",
+    secondary: "+ Род.падеж"
+}, false);
+
 vocabulary("htoi", GrammarType.CONJUNCTION, {
     primary: "или"
 }, false);
@@ -348,6 +357,10 @@ vocabulary("exaposteilariov", GrammarType.NOUN, {
 
 vocabulary("idiomelov", GrammarType.NOUN, {
     primary: "самогласен",
+}, false);
+
+vocabulary("etera", GrammarType.ADJECTIVE, {
+    primary: "другой (иначе, по-другому)",
 }, false);
 
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
