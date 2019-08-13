@@ -319,6 +319,10 @@ vocabulary("allo", GrammarType.ADJECTIVE, {
     primary: "иной",
 }, false);
 
+vocabulary("suvhqhc", GrammarType.ADJECTIVE, {
+    primary: "обычный",
+}, false);
+
 vocabulary("apolush", GrammarType.NOUN, {
     primary: "Отпуст",
 }, false);
@@ -357,6 +361,10 @@ vocabulary("exaposteilariov", GrammarType.NOUN, {
 
 vocabulary("idiomelov", GrammarType.NOUN, {
     primary: "самогласен",
+}, false);
+
+vocabulary("prosomoia", GrammarType.NOUN, {
+    primary: "подобен",
 }, false);
 
 vocabulary("etera", GrammarType.ADJECTIVE, {
