@@ -371,6 +371,14 @@ vocabulary("etera", GrammarType.ADJECTIVE, {
     primary: "другой (иначе, по-другому)",
 }, false);
 
+vocabulary("eisodoc", GrammarType.NOUN, {
+    primary: "вход",
+}, false);
+
+vocabulary("ebdomada", GrammarType.NOUN, {
+    primary: "неделя (седмица)",
+}, false);
+
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
     primary: "Предварившия утро",
     secondary: "Ипакои Пасхи - Προλαβοῦσαι τὸν ὄρθρον",
