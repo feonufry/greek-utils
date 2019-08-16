@@ -379,6 +379,18 @@ vocabulary("ebdomada", GrammarType.NOUN, {
     primary: "неделя (седмица)",
 }, false);
 
+vocabulary("proeortia", GrammarType.NOUN, {
+    primary: "предпраздество",
+}, false);
+
+vocabulary("apodeipvov", GrammarType.NOUN, {
+    primary: "повечерие",
+}, false);
+
+vocabulary("diakivhsimov", GrammarType.NOUN, {
+    primary: "Светлая седмица",
+}, false);
+
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
     primary: "Предварившия утро",
     secondary: "Ипакои Пасхи - Προλαβοῦσαι τὸν ὄρθρον",
