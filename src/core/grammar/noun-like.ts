@@ -321,7 +321,104 @@ register("ewv", {
     canonicalTransformations: transform("ewv", "h")
 });
 
+// 3rd, Singular
+noun(
+    ["oc"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.SINGULAR,
+    [Case.GENITIVE],
+    transform("oc", "-"));
+noun(
+    ["i"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.SINGULAR,
+    [Case.DATIVE],
+    transform("i", "oc-"));
+noun(
+    ["a", "v"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.SINGULAR,
+    [Case.ACCUSATIVE],
+    [
+        ...transform("a", "oc-"),
+        ...transform("v", "oc-")
+    ]);
+noun(
+    ["ma"],
+    [Gender.NEUTER], Singularity.SINGULAR, [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    []);
+noun(
+    ["matoc"],
+    [Gender.NEUTER],
+    Singularity.SINGULAR,
+    [Case.GENITIVE],
+    transform("matoc", "ma"));
+noun(
+    ["mati"],
+    [Gender.NEUTER],
+    Singularity.SINGULAR,
+    [Case.DATIVE],
+    transform("mati", "ma"));
+
+// 3rd, Plural
+noun(
+    ["ec"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.PLURAL,
+    [Case.GENITIVE],
+    transform("ec", "oc-"));
+noun(
+    ["si", "siv", "xi", "xiv", "ji", "jiv", "ousi", "ousiv"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.PLURAL,
+    [Case.DATIVE],
+    [
+        ...transform("si", "oc-", "toc-", "doc-", "qoc-", "vtoc-"),
+        ...transform("siv", "oc-", "toc-", "doc-", "qoc-", "vtoc-"),
+        ...transform("xi", "koc-", "goc-", "хoc-"),
+        ...transform("xiv", "koc-", "goc-", "хoc-"),
+        ...transform("ji", "poc-", "boc-", "фoc-"),
+        ...transform("jiv", "poc-", "boc-", "фoc-"),
+        ...transform("ousi", "ovtoc-"),
+        ...transform("ousiv", "ovtoc-"),
+    ]);
+noun(
+    ["ac"],
+    [Gender.MASCULINE, Gender.MASCULINE, Gender.NEUTER],
+    Singularity.PLURAL,
+    [Case.ACCUSATIVE],
+    transform("ac", "oc-"));
+
+noun(
+    ["mata"],
+    [Gender.NEUTER], Singularity.PLURAL, [Case.NOMINATIVE, Case.ACCUSATIVE, Case.VOCATIVE],
+    transform("mata", "ma"));
+noun(
+    ["matwv"],
+    [Gender.NEUTER], Singularity.PLURAL, [Case.GENITIVE],
+    transform("matwv", "ma"));
+noun(
+    ["masi", "masiv"],
+    [Gender.NEUTER], Singularity.PLURAL, [Case.DATIVE],
+    [
+        ...transform("masi", "ma"),
+        ...transform("masiv", "ma"),
+    ]);
+
 // Utils
+
+function noun(suffixes: string[], genders: Gender[], singularity: Singularity, cases: Case[], transformations: CanonicalTransformation[]) {
+    for (const suffix of suffixes) {
+        register(suffix, {
+            type: GrammarType.NOUN,
+            gender: genders,
+            singularity,
+            case: cases,
+            canonical: [],
+            canonicalTransformations: transformations
+        });
+    }
+}
 
 function transform(original: string, ...replacements: string[]): CanonicalTransformation[] {
     return replacements.map(replacement => ({ original, replacement }));
