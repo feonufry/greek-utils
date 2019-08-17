@@ -111,7 +111,13 @@ vocabulary("ekeiva", GrammarType.PARTICLE, {
 //-------------------------------------------------------------------------------------------------------------------
 
 vocabulary("ou", GrammarType.PARTICLE, {
-    primary: "не (отрицание)"
+    primary: "не (отрицание)",
+    secondary: "изъявительное накл.",
+}, true);
+
+vocabulary("mh", GrammarType.PARTICLE, {
+    primary: "не (отрицание)",
+    secondary: "повел., желат., сослаг. накл.; прич.; инфинитив",
 }, true);
 
 vocabulary("de", GrammarType.PARTICLE, {
@@ -189,6 +195,14 @@ vocabulary("htoi", GrammarType.CONJUNCTION, {
 
 vocabulary("eita", GrammarType.ADVERB, {
     primary: "потом, затем, далее, после"
+});
+
+vocabulary("euqewc", GrammarType.ADVERB, {
+    primary: "тотчас, сразу же, немедленно"
+});
+
+vocabulary("euquc", GrammarType.ADVERB, {
+    primary: "тотчас, сразу же, немедленно"
 });
 
 vocabulary("suv", GrammarType.PREPOSITION, {
