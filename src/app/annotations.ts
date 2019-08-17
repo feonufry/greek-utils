@@ -112,6 +112,8 @@ export function buildTenseHtml(tense: Tense) {
             return "<attr title='имперфект (прошедшее время несовершенного вида)'>имперф.</attr>";
         case Tense.AORIST_1:
             return "<attr title='аорист I (прошедшее время совершенного вида)'>аор.I</attr>";
+        case Tense.AORIST_2:
+            return "<attr title='аорист II (прошедшее время совершенного вида)'>аор.I</attr>";
     }
     return "";
 }

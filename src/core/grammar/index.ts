@@ -26,6 +26,7 @@ export enum Tense {
     PRESENT,
     IMPERFECT, // past incomplete
     AORIST_1, // past complete
+    AORIST_2, // past complete
 }
 
 export enum Voice {
