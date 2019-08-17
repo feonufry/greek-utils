@@ -263,5 +263,6 @@ export function buildPrimarySearchLinksHtml(annotatedToken: AnnotatedToken) {
 }
 
 export function buildSearchLinksHtml(greek: string, look: string = "primary") {
-    return `<a class="btn btn-outline-${look} btn-sm" href="search.html?q=${greek}" target="_blank">${greek} &rarr;</a>`;
+    const search = greek.endsWith("-") ? greek.replace("-", "") : greek;
+    return `<a class="btn btn-outline-${look} btn-sm" href="search.html?q=${search}" target="_blank">${greek} &rarr;</a>`;
 }
