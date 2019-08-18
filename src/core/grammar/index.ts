@@ -20,6 +20,7 @@ export enum Case {
 
 export enum Mood {
     INDICATIVE, // a state of factuality and reality
+    CONJUNCTIVE, // сослагательное
 }
 
 export enum Tense {

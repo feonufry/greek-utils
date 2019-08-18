@@ -122,6 +122,8 @@ export function buildMoodHtml(mood: Mood) {
     switch (mood) {
         case Mood.INDICATIVE:
             return "";
+        case Mood.CONJUNCTIVE:
+            return "<attr title='сослагательное наклонение'>сослаг.</attr>";
     }
     return "";
 }

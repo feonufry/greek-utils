@@ -20,6 +20,17 @@ toBe(Mood.INDICATIVE,
     ),
 );
 
+toBe(Mood.CONJUNCTIVE,
+    tense(Tense.PRESENT, Voice.ACTIVE,
+        form(Person.FIRST, Singularity.SINGULAR, "$w"),
+        form(Person.FIRST, Singularity.PLURAL, "$wmev"),
+        form(Person.SECOND, Singularity.SINGULAR, "$h/c"),
+        form(Person.SECOND, Singularity.PLURAL, "$hte"),
+        form(Person.THIRD, Singularity.SINGULAR, "$h/"),
+        form(Person.THIRD, Singularity.PLURAL, "$wsi", "$wsiv"),
+    ),
+);
+
 interface ToBePersonForm {
     forms: string[];
     person: Person;
