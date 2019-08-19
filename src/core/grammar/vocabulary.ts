@@ -349,6 +349,11 @@ vocabulary("avagvwsic", GrammarType.NOUN, {
     primary: "чтение",
 }, false);
 
+vocabulary("avagvwsma", GrammarType.NOUN, {
+    primary: "чтение",
+    secondary: "Св. Писания",
+}, false);
+
 vocabulary("hхoc", GrammarType.NOUN, {
     primary: "глас",
 }, false);
@@ -407,6 +412,14 @@ vocabulary("apodeipvov", GrammarType.NOUN, {
 
 vocabulary("diakivhsimov", GrammarType.NOUN, {
     primary: "Светлая седмица",
+}, false);
+
+vocabulary("avabaqmoi", GrammarType.NOUN, {
+    primary: "степенны",
+}, false);
+
+vocabulary("poihma", GrammarType.NOUN, {
+    primary: "творение",
 }, false);
 
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
