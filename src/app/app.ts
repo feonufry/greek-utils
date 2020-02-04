@@ -2,7 +2,7 @@ import { untransliterate } from "../core/transliteration";
 import { tokenize } from "../core/scanning";
 import {
     buildAliasesHtml,
-    buildGrammarAnnotationsHtml, buildNumberHtml,
+    buildNumberHtml,
     buildPrimarySearchLinksHtml,
     buildVocabularyHtml
 } from "./annotations";
@@ -28,7 +28,7 @@ function handleAnalyze() {
 </div>
 ${buildNumberHtml(annotatedToken.number)}
 ${buildAliasesHtml(annotatedToken.aliases)}
-${buildGrammarAnnotationsHtml(annotatedToken)}
+${""/*buildGrammarAnnotationsHtml(annotatedToken)*/}
 ${buildVocabularyHtml(annotatedToken)}
 </li>`;
         $tokensList.append(item);
@@ -38,4 +38,5 @@ ${buildVocabularyHtml(annotatedToken)}
 $(() => {
     $("#sourceText").on("keyup", handleUntransliterate);
     $("#analyzeButton").on("click", handleAnalyze);
+    $(".app-lookup").on("click", function() { alert($(this).data("token")) });
 });

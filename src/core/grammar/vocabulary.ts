@@ -422,6 +422,18 @@ vocabulary("poihma", GrammarType.NOUN, {
     primary: "творение",
 }, false);
 
+vocabulary("vhsteia", GrammarType.NOUN, {
+    primary: "пост",
+}, false);
+
+vocabulary("paramovh", GrammarType.NOUN, {
+    primary: "канун",
+}, false);
+
+vocabulary("paraklhsiv", GrammarType.NOUN, {
+    primary: "утешение (Тв.п.)",
+}, false);
+
 vocabulary("prolabousai", GrammarType.PHRASE_INCIPIO, {
     primary: "Предварившия утро",
     secondary: "Ипакои Пасхи - Προλαβοῦσαι τὸν ὄρθρον",

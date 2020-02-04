@@ -261,10 +261,19 @@ export function buildPrimarySearchLinksHtml(annotatedToken: AnnotatedToken) {
     for (const alias of annotatedToken.aliases) {
         links += " " + buildSearchLinksHtml(untransliterate(alias));
     }
+    links += buildSearchLinks2Html(annotatedToken.token.greekBasic);
+    for (const alias of annotatedToken.aliases) {
+        links += " " + buildSearchLinks2Html(untransliterate(alias));
+    }
     return links;
 }
 
 export function buildSearchLinksHtml(greek: string, look: string = "primary") {
     const search = greek.endsWith("-") ? greek.replace("-", "") : greek;
     return `<a class="btn btn-outline-${look} btn-sm" href="search.html?q=${search}" target="_blank">${greek} &rarr;</a>`;
+}
+
+export function buildSearchLinks2Html(greek: string, look: string = "success") {
+    const search = greek.endsWith("-") ? greek.replace("-", "") : greek;
+    return `<a class="btn btn-outline-${look} btn-sm" href="https://translate.academic.ru/${search}/xx/xx/" target="_blank">${greek} &rarr;</a>`;
 }
